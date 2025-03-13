@@ -4,7 +4,7 @@ import random
 import os
 
 
-LETTERS_MAPPING = {
+letters_mapping = {
     'а': 'а͠', 'б': 'б̋', 'в': 'в͒͠', 'г': 'г͒͠', 'д': 'д̋', 'е': 'е͠',
     'ё': 'ё͒͠', 'ж': 'ж͒', 'з': 'з̋̋͠', 'и': 'и', 'й': 'й͒͠', 'к': 'к̋̋',
     'л': 'л̋͠', 'м': 'м͒͠', 'н': 'н͒', 'о': 'о̋', 'п': 'п̋͠', 'р': 'р̋͠',
@@ -19,7 +19,7 @@ LETTERS_MAPPING = {
     ' ': ' '
 }
 
-SKILLS = [
+skills = [
     "Стремительный прыжок", "Электрический выстрел", "Ледяной удар",
     "Стремительный удар", "Кислотный взгляд", "Тайный побег",
     "Ледяной выстрел", "Огненный заряд"
@@ -27,7 +27,7 @@ SKILLS = [
 
 
 def generate_runic_skills(skills):
-    return ["".join(LETTERS_MAPPING.get(char, char) for char in skill) for skill in skills]
+    return ["".join(letters_mapping.get(char, char) for char in skill) for skill in skills]
 
 
 def generate_character(fake, runic_skills):
@@ -49,7 +49,7 @@ def generate_character(fake, runic_skills):
 
 def main():
     fake = Faker("ru_RU")
-    runic_skills = generate_runic_skills(SKILLS)
+    runic_skills = generate_runic_skills(skills)
     
     results_dir = os.path.join("Results")
     os.makedirs(results_dir, exist_ok=True)
