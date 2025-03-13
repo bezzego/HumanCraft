@@ -32,7 +32,7 @@ SKILLS = [
 
 
 def generate_runic_skills(SKILLS):
-    return ["".join(letters_mapping.get(char, char) for char in skill) for skill in skills]
+    return ["".join(LETTERS_MAPPING.get(char, char) for char in skill) for skill in skills]
 
 
 def generate_character(fake, runic_skills):
