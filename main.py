@@ -19,7 +19,7 @@ LETTERS_MAPPING = {
     ' ': ' '
 }
 
-SKILLS = [
+HUMAN_SKILLS = [
     "Стремительный прыжок", 
     "Электрический выстрел", 
     "Ледяной удар",
@@ -31,7 +31,7 @@ SKILLS = [
 ]
 
 
-def generate_runic_skills(SKILLS):
+def generate_runic_skills(HUMAN_SKILLS):
     return ["".join(LETTERS_MAPPING.get(char, char) for char in skill) for skill in skills]
 
 
@@ -54,7 +54,7 @@ def generate_character(fake, runic_skills):
 
 def main():
     fake = Faker("ru_RU")
-    runic_skills = generate_runic_skills(SKILLS)
+    runic_skills = generate_runic_skills(HUMAN_SKILLS)
     
     results_dir = os.path.join("Results")
     os.makedirs(results_dir, exist_ok=True)
